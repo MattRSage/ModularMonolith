@@ -1,6 +1,7 @@
 ﻿using System.Runtime.CompilerServices;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
+using ModularMonolith.Modules.Portfolios.Core;
 
 [assembly:InternalsVisibleTo("ModularMonolith.Bootstrapper")]
 namespace ModularMonolith.Modules.Portfolios.Api
@@ -9,6 +10,8 @@ namespace ModularMonolith.Modules.Portfolios.Api
     {
         public static IServiceCollection AddPortfoliosModule(this IServiceCollection services)
         {
+            services.AddCore();
+            
             return services;
         }
 
